@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+<addon id="plugin.video.lastplayed10" name="Last Played 10" version="1.0.0" provider-name="Sharad">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+  </requires>
+  <!-- Program add-ons: pop-up list of the last 10 items to choose from -->
+  <extension point="xbmc.python.script" library="launch.py">
+    <provides>executable</provides>
+  </extension>
+  <!-- Video add-ons + skin widgets: history list (plugin://plugin.video.lastplayed10/) -->
+  <extension point="xbmc.python.pluginsource" library="plugin.py">
+    <provides>video</provides>
+  </extension>
+  <!-- Background tracker -->
+  <extension point="xbmc.service" library="service.py" start="login"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Pick from the last 10 things you played in Kodi</summary>
+    <description lang="en_GB">Remembers what you play (local files, network shares, and streams from other add-ons) and lets you choose from the last 10 items. Resumes where you stopped, with the same subtitle you were using. Works as a skin widget (Video add-ons > Last Played 10). Independent from the one-click "Last Played" add-on.</description>
+    <platform>all</platform>
+    <license>MIT</license>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="plugin.video.pmlibrary" name="Premiumize Library" version="1.4.3" provider-name="pmlibrary">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.requests" version="2.22.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="main.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.service" library="service.py"/>
+  <extension point="xbmc.subtitle.module" library="main.py"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Your Premiumize cloud as a Kodi library, with artwork and IMDb ratings</summary>
+    <description lang="en_GB">Syncs the videos in your Premiumize cloud into Kodi as .strm files with NFO metadata (posters, fanart, plot, cast, IMDb and TMDb ratings), so they appear in Movies and TV Shows like local files. Playback asks Premiumize for a fresh link each time. Also includes a browse view of the raw cloud folders and a manual match tool for files that cannot be identified automatically, and automatic English subtitles from OpenSubtitles.com for videos that have none. Requires a Premiumize account, a free TMDb API key, and (for IMDb ratings) a free OMDb API key.</description>
+    <platform>all</platform>
+    <license>MIT</license>
+    <news>1.4.3 - Locked settings come from the public delivery repository (SJJ Kodi Repository 1.1.0); stronger lock and PINs of at least 8 characters. 1.4.2 - Locked settings work with SJJ Kodi Repository 1.0.2 (key sent as a header). 1.4.1 - Locked settings are found with the updated SJJ Kodi Repository (1.0.1). 1.4.0 - New Shields set themselves up: "Create locked settings for new Shields" saves the keys and settings of this add-on and TorrentClaw, locked with your PIN, for your private repository; a new Shield asks for the PIN once and fills everything in (Settings > Sync). 1.3.1 - After each sync, checks that matched films and episodes really are in the Kodi library and asks Kodi to scan again if not. 1.3.0 - Appears in Subtitles > Download: OpenSubtitles results (exact-file matches marked in sync) plus "Sync the current subtitle to the dialogue"; retries dropped connections. 1.2.1 - Tells you when subtitles were skipped because an earlier search found none; "Forget failed subtitle searches" button; clearer subtitle log lines. 1.2.0 - English subtitles fetched from OpenSubtitles.com when a video has none (chosen by file name, exact-file matches first); Export/Import settings. 1.1.0 - Playback through the Premiumize HTTP folder link (found in your Kodi sources), with API fallback; subtitle files next to a video are loaded automatically. 1.0.2 - Unmatched files are retried on every sync; library scans use the path Kodi stores for the source; sync summary in the Kodi log. 1.0.1 - API key fields fixed.</news>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="plugin.video.torrentclaw" name="TorrentClaw" version="1.5.0" provider-name="Sharad">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Browse TorrentClaw and send torrents to your Premiumize cloud</summary>
+        <description lang="en_GB">Popular, latest and trending movies and TV shows from TorrentClaw, with search. Long-press any title or release and choose "Add to Premiumize cloud". Fetches English subtitles from OpenSubtitles.com when a release has none. Shows IMDb ratings, release quality, size, seeders, audio languages and Premiumize cache status. Requires a TorrentClaw API key (for magnet links) and a Premiumize API key.</description>
+        <platform>all</platform>
+        <license>MIT</license>
+        <news>1.5.0 - Advanced filter in Search Movies and Search TV Shows: pick a language (films made in that language's countries, with that audio), a genre and a decade; results sorted by IMDb score. Includes an Art house genre (from TMDb's art house tag, sorted by TMDb score; releases looked up on TorrentClaw when you open a title). Save filters as favourites for one click. 1.4.0 - Search by actor or director in Search Movies and Search TV Shows: pick the person, see their main films/shows highest rated first (from TMDb), releases looked up on TorrentClaw when you open one. 1.3.0 - New East Asian Movies section: best, popular and latest Chinese, Japanese, Hong Kong and Korean films; "Best" lists added to the Indian section too. 1.2.0 - Indian Movies rebuilt: latest and popular Hindi, Malayalam, Tamil, Telugu and Kannada films listed from TMDb (releases looked up on TorrentClaw when you open one), plus "Any film with Hindi/Malayalam/... audio". New TMDb API key setting (reuses the Premiumize Library key if empty).</news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="repository.sjjkodi" name="SJJ Kodi Repository" version="1.1.0" provider-name="Sharad">
+  <requires>
+    <import addon="xbmc.addon" version="12.0.0"/>
+  </requires>
+  <extension point="xbmc.addon.repository" name="SJJ Kodi Repository">
+    <dir>
+      <info compressed="false">https://raw.githubusercontent.com/Sharadjjw/kodi-addons/main/zips/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/Sharadjjw/kodi-addons/main/zips/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/Sharadjjw/kodi-addons/main/zips/</datadir>
+    </dir>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Sharad's Kodi add-ons</summary>
+    <description lang="en_GB">Installs and updates Premiumize Library, TorrentClaw, Last Played and Last Played 10 on every Shield.</description>
+    <platform>all</platform>
+    <news>1.1.0 - Add-ons now come from a public delivery repository, because Kodi cannot install from a private GitHub repository. No key needed. 1.0.2 - Key sent as a header. 1.0.1 - First attempt at sending the key up front.</news>
+    <license>MIT</license>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="script.lastplayed" name="Last Played" version="3.0.0" provider-name="Sharad">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+  </requires>
+  <!-- Program add-ons: one click resumes / replays the last item -->
+  <extension point="xbmc.python.script" library="launch.py">
+    <provides>executable</provides>
+  </extension>
+  <!-- Background tracker -->
+  <extension point="xbmc.service" library="service.py" start="login"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">One click to replay or resume the last thing you played in Kodi</summary>
+    <description lang="en_GB">Remembers what you play (local files, network shares, and streams from other add-ons) and resumes it in one click, with the same subtitle you were using. For a list of the last 10 items, install the separate "Last Played 10" add-on.</description>
+    <platform>all</platform>
+    <license>MIT</license>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+</addons>
