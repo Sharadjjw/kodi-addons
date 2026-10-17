@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.video.lastplayed10" name="Last Played 10" version="1.0.0" provider-name="Sharad">
+<addon id="plugin.video.lastplayed10" name="Last Played 10" version="1.0.1" provider-name="Sharad">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -91,7 +91,7 @@
   </extension>
 </addon>
 
-<addon id="script.lastplayed" name="Last Played" version="3.0.0" provider-name="Sharad">
+<addon id="script.lastplayed" name="Last Played" version="3.0.1" provider-name="Sharad">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
