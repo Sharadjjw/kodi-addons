@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.video.lastplayed10" name="Last Played 10" version="1.0.5" provider-name="Sharad">
+<addon id="plugin.video.lastplayed10" name="Last Played 10" version="1.0.6" provider-name="Sharad">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -19,6 +19,7 @@
     <description lang="en_GB">Remembers what you play (local files, network shares, and streams from other add-ons) and lets you choose from the last 10 items. Resumes where you stopped, with the same subtitle you were using. Works as a skin widget (Video add-ons > Last Played 10). Independent from the one-click "Last Played" add-on.</description>
     <platform>all</platform>
     <license>MIT</license>
+    <news>1.0.6 - Open the Last Played 10 list from a remote button: a button app such as tvQuickActions (with ADB on) runs "touch /sdcard/Android/data/org.xbmc.kodi/files/.kodi/userdata/addon_data/plugin.video.lastplayed10/open_list" and the list opens, also when Kodi was closed.</news>
     <assets>
       <icon>icon.png</icon>
     </assets>
