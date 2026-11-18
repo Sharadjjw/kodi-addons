@@ -103,7 +103,7 @@
   </extension>
 </addon>
 
-<addon id="script.lastplayed" name="Last Played" version="3.0.4" provider-name="Sharad">
+<addon id="script.lastplayed" name="Last Played" version="3.0.5" provider-name="Sharad">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -118,6 +118,7 @@
     <description lang="en_GB">Remembers what you play (local files, network shares, and streams from other add-ons) and resumes it in one click, with the same subtitle you were using. For a list of the last 10 items, install the separate "Last Played 10" add-on.</description>
     <platform>all</platform>
     <license>MIT</license>
+    <news>3.0.5 - Start Last Played from a remote button: a button app such as tvQuickActions (with ADB on) runs "touch /sdcard/Android/data/org.xbmc.kodi/files/.kodi/userdata/addon_data/script.lastplayed/play_last" and Last Played starts, also when Kodi was closed. Ignored while a video is playing.</news>
     <assets>
       <icon>icon.png</icon>
     </assets>
