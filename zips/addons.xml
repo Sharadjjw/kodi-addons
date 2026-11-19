@@ -126,7 +126,7 @@
   </extension>
 </addon>
 
-<addon id="service.kodivoice" name="Kodi Voice (Alexa)" version="1.0.0" provider-name="Sharad">
+<addon id="service.kodivoice" name="Kodi Voice (Alexa)" version="1.0.1" provider-name="Sharad">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -137,7 +137,8 @@
     <description lang="en_GB">Pause, resume, stop, rewind and fast forward Kodi by voice ("Alexa, pause Kodi"). Alexa routines can also jump back or forward 30 seconds, 3 minutes or 5 minutes, and start Last Played or open Last Played 10. Needs a free Sinric Pro account with two devices: "Kodi" (type TV) and "Kodi Command" (type Switch with Dimming), and the Sinric Pro skill enabled in the Alexa app. Enter the App Key, App Secret and both Device IDs in this add-on's settings. Kodi must be open for commands to work.</description>
     <platform>all</platform>
     <license>MIT</license>
-    <news>1.0.0 - First version: "Alexa, pause / resume / stop / rewind / fast forward Kodi", plus routine commands through "Kodi Command" (10% back 30 s, 20% forward 30 s, 30% back 3 min, 40% forward 3 min, 50% back 5 min, 60% forward 5 min, 70% Last Played, 80% Last Played 10).</news>
+    <news>1.0.1 - Shows on screen why an Alexa command failed (App Secret does not match, unknown Device ID, or an error), at most once a minute.
+1.0.0 - First version: "Alexa, pause / resume / stop / rewind / fast forward Kodi", plus routine commands through "Kodi Command" (10% back 30 s, 20% forward 30 s, 30% back 3 min, 40% forward 3 min, 50% back 5 min, 60% forward 5 min, 70% Last Played, 80% Last Played 10).</news>
     <assets>
       <icon>icon.png</icon>
     </assets>
